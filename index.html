@@ -14,6 +14,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background-color: #f4f4f9;
         }
 
         header {
@@ -21,10 +22,13 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav {
-            background: #f4f4f4;
+            background: #444;
             padding: 0.5rem;
             text-align: center;
         }
@@ -41,7 +45,12 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f0a500;
         }
 
         main {
@@ -50,6 +59,17 @@
 
         section {
             margin: 2rem 0;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            background: #f0a500;
+            color: #333;
+            padding: 0.5rem;
+            border-radius: 5px;
         }
 
         footer {
@@ -67,6 +87,25 @@
                 display: block;
                 margin: 0.5rem 0;
             }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            background: #f0a500;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #e09e00;
+        }
+
+        .highlight {
+            color: #e09e00;
         }
     </style>
 </head>
@@ -86,27 +125,43 @@
     <main>
         <section id="wood">
             <h2>Wood</h2>
-            <p>Wood is a versatile and sustainable material used in many types of construction. It is used for framing, flooring, and finishing.</p>
+            <p>Wood is a versatile and sustainable material used in many types of construction. It is used for framing, flooring, and finishing. Wood offers natural beauty, strength, and insulation properties, making it a popular choice for both structural and decorative purposes in building projects.</p>
+            <a href="https://en.wikipedia.org/wiki/Wood" class="button">Learn more</a>
         </section>
         <section id="brick">
             <h2>Brick</h2>
-            <p>Brick is a durable and fire-resistant material often used in walls and facades.</p>
+            <p>Brick is a durable and fire-resistant material often used in walls and facades. It provides excellent thermal mass, helping to regulate indoor temperatures. Brick buildings are known for their longevity, aesthetic appeal, and low maintenance requirements.</p>
+            <a href="https://en.wikipedia.org/wiki/Brick" class="button">Learn more</a>
         </section>
         <section id="concrete">
             <h2>Concrete</h2>
-            <p>Concrete is a strong and durable material used for foundations, floors, and walls. It can be molded into various shapes.</p>
+            <p>Concrete is a strong and durable material used for foundations, floors, and walls. It can be molded into various shapes and is known for its high compressive strength. Concrete is a key component in modern construction, offering versatility and resilience.</p>
+            <a href="https://en.wikipedia.org/wiki/Concrete" class="button">Learn more</a>
         </section>
         <section id="steel">
             <h2>Steel</h2>
-            <p>Steel is a strong and flexible material used for structural support in buildings.</p>
+            <p>Steel is a strong and flexible material used for structural support in buildings. It is essential for skyscrapers and large industrial buildings due to its high strength-to-weight ratio. Steel structures are known for their durability and ability to withstand extreme conditions.</p>
+            <a href="https://en.wikipedia.org/wiki/Steel" class="button">Learn more</a>
         </section>
         <section id="glass">
             <h2>Glass</h2>
-            <p>Glass is used for windows, doors, and facades. It allows natural light to enter the building.</p>
+            <p>Glass is used for windows, doors, and facades. It allows natural light to enter the building, enhancing the indoor environment. Modern glass technologies offer energy efficiency, sound insulation, and safety features, making it an integral part of contemporary architecture.</p>
+            <a href="https://en.wikipedia.org/wiki/Glass" class="button">Learn more</a>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 House Construction Materials</p>
     </footer>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
